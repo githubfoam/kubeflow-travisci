@@ -7,21 +7,22 @@ set -o xtrace
 
 # https://www.kubeflow.org/docs/started/workstation/minikube-linux/
 echo "=============================kubeflow============================================================="
-#Install Docker CE
-docker run hello-world
-
-#Install kubectl
-curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.15.0/bin/linux/amd64/kubectl
-chmod +x ./kubectl
-mv ./kubectl /usr/local/bin/kubectl
-
-# Install Minikube
-curl -Lo minikube https://storage.googleapis.com/minikube/releases/v1.2.0/minikube-linux-amd64
-chmod +x minikube
-cp minikube /usr/local/bin/
-rm minikube
-#starts Minikube with 6 CPUs, 12288 memory, 120G disk size
-minikube start --vm-driver=none --cpus 6 --memory 12288 --disk-size=120g --extra-config=apiserver.authorization-mode=RBAC --extra-config=kubelet.resolv-conf=/run/systemd/resolve/resolv.conf --extra-config kubeadm.ignore-preflight-errors=SystemVerification
+# #Install Docker CE
+# docker run hello-world
+#
+# #Install kubectl
+# curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.15.0/bin/linux/amd64/kubectl
+# chmod +x ./kubectl
+# mv ./kubectl /usr/local/bin/kubectl
+#
+# # Install Minikube
+# curl -Lo minikube https://storage.googleapis.com/minikube/releases/v1.2.0/minikube-linux-amd64
+# chmod +x minikube
+# cp minikube /usr/local/bin/
+# rm minikube
+# #starts Minikube with 6 CPUs, 12288 memory, 120G disk size
+# minikube start --vm-driver=none --cpus 6 --memory 12288 --disk-size=120g --extra-config=apiserver.authorization-mode=RBAC --extra-config=kubelet.resolv-conf=/run/systemd/resolve/resolv.conf --extra-config kubeadm.ignore-preflight-errors=SystemVerification
+#
 
 # Installation of Kubeflow
 # Download the kfctl v1.0.2 release
@@ -128,5 +129,5 @@ git clone https://github.com/kubeflow/fairing.git
 cd /tmp/kubeflow/fairing/examples/mnist
 conda info --envs #list all discoverable environments
 conda activate mlpipeline #Could not find conda environment: mlpipeline
-# docker login
-jupyter notebook --allow-root &
+jupyter notebook --allow-root > /dev/null
+# jupyter notebook --allow-root & #background job

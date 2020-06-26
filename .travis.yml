@@ -24,7 +24,7 @@ matrix:
         - source ~venvpy3/bin/activate
         - pip install -r requirements.txt
       script:
-        # - sudo make deploy-minikube
-        - sudo make deploy-kubeflow #installing minikube included
+        - sudo make deploy-minikube-latest
+        - sudo make deploy-kubeflow 
       after_success:
         - deactivate
