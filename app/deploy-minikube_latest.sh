@@ -15,8 +15,14 @@ mv ./kubectl /usr/local/bin/kubectl
 
 # Install Minikube
 export MINIKUBEVERSION="1.11.0"
-# curl -Lo minikube https://storage.googleapis.com/minikube/releases/v1.2.0/minikube-linux-amd64
-curl -Lo minikube https://storage.googleapis.com/minikube/releases/v$MINIKUBEVERSION/minikube-linux-amd64
+curl -Lo minikube https://storage.googleapis.com/minikube/releases/v1.2.0/minikube-linux-amd64
+
+#curl -Lo minikube https://storage.googleapis.com/minikube/releases/v$MINIKUBEVERSION/minikube-linux-amd64
+# * Using the none driver based on user configuration
+# ! The 'none' driver does not respect the --cpus flag
+# ! The 'none' driver does not respect the --memory flag
+# X Sorry, Kubernetes 1.18.3 requires conntrack to be installed in root's path
+
 chmod +x minikube
 cp minikube /usr/local/bin/ && rm minikube
 #starts Minikube with 6 CPUs, 12288 memory, 120G disk size

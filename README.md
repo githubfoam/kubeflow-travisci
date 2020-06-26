@@ -8,7 +8,7 @@ Travis (.com) branch:
 
 smoke tests kubeflow
 ~~~~
-Minikube + kubectl + Docker + kubeflow fairing + Jupyter Notebook 
+Minikube + kubectl + Docker + kubeflow fairing + Jupyter Notebook
 
 
 
@@ -66,8 +66,11 @@ F0626 12:24:45.845983    6085 cluster.go:391] Unsupported driver: none
 
 ~~~~
 https://github.com/kubeflow/examples
+
 Kubeflow Fairing is a  Python package that streamlines the process of building, training, and deploying machine learning (ML) models
 https://github.com/kubeflow/fairing
+
+https://github.com/kubernetes/minikube
 ~~~~
 
 ~~~~
