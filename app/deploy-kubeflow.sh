@@ -129,5 +129,4 @@ git clone https://github.com/kubeflow/fairing.git
 cd /tmp/kubeflow/fairing/examples/mnist
 conda info --envs #list all discoverable environments
 conda activate mlpipeline #Could not find conda environment: mlpipeline
-#jupyter notebook --allow-root > /dev/null #travis crashing
 jupyter notebook --allow-root & #background job
